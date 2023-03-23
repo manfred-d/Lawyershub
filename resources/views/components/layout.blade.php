@@ -24,6 +24,6 @@
         {{ $slot }}
     </main>
     {{-- Footer --}}
-    {{-- @include('utils.footer'); --}}
+    @include('utils.footer')
 
 </body>

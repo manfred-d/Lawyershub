@@ -21,7 +21,7 @@ section{
 }
 /* navbar */
 nav{
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -29,7 +29,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.7);
     padding: 20px 3px;
 }
 .logo{
@@ -93,4 +93,15 @@ nav li:hover a{
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+}
+:root{
+    --card-width:400px;
+}
+.card{
+    min-width: var(--card-width);
+    margin: .3rem;
+}
+.more_cards .rated_lawyers{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,var(--card-width)),1fr));
 }
