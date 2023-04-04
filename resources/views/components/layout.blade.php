@@ -8,13 +8,13 @@
         </div>
         <ul class="nav nav-pills nav-justified">
             <li class="active">
-                <a data-toggle="tab" href="#home">Grow Your Practice</a>
+                <a data-toggle="tab" href="/grow_your_practice">Grow Your Practice</a>
             </li>
             <li>
-                <a data-toggle="tab" href="#about">Get Advice</a>
+                <a data-toggle="tab" href="/legal_advice">Get Advice</a>
             </li>
             <li>
-                <a data-toggle="tab" href="#contact">Sign In</a>
+                <a data-toggle="tab" href="{{ '/account/login' }}">Sign In</a>
             </li>
         </ul>
     </nav>

@@ -26,11 +26,11 @@
                                 </div>
                                 <div class="profile_details row items-start w-full mb-5 flex-col ">
                                     <div class="row w-full p-4 pl-7">
-                                        <h4 class=" font-semibold text-3xl ">Lawyers Name</h4>
+                                        <h4 class=" font-semibold text-3xl ">{{ $lawyer->last_name .'  '. $lawyer->first_name }}</h4>
                                     </div>
                                     <div class="row  items-start justify-between px-7 pb-0 w-full ">
                                         <div class="title_info items-start flex flex-col">
-                                            <p class=" py-2">Personal lawyer injury lawyer, Nairobi</p>
+                                            <p class=" py-2">{{ $lawyer->practice_area }}, {{ $lawyer->location }}</p>
                                             <span class=" py-2">
                                                 <ul class="flex justify-center">Reviews 4.0 &nbsp;
                                                     <li>
@@ -53,7 +53,7 @@
                                             </span>
                                         </div>
                                         <div class="license mr-4">
-                                            <h5 class=" py-2">License for 23 years</h5>
+                                            <h5 class=" py-2">Licensed {{ $lawyer->license_year->diffForHumans() }} </h5>
                                             <span class=" py-1">Ask a Question?</span>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@
                             {{-- contact --}}
                             <div class="row">
                                 <div class="contacts flex gap-3 ml-6 w-full items-center ">
-                                    <a href="tel:+254789000000">
+                                    <a href="tel:{{ $lawyer->phone }}">
                                         <button type="button" data-te-ripple-init data-te-ripple-color="light"
                                             class="mb-2 items-center flex rounded px-6 py-2.5 text-sm font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
                                             style="background-color: #ff0000">
@@ -74,7 +74,7 @@
                                             Call
                                         </button>
                                     </a>
-                                    <a href="https://api.whatsapp.com/wa.me/+254789000000">
+                                    <a href="https://api.whatsapp.com/wa.me/{{ $lawyer->phone }}">
                                         <button type="button" data-te-ripple-init data-te-ripple-color="light"
                                             class="mb-2 items-center flex rounded px-6 py-2.5 text-sm font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
                                             style="background-color: rgb(52, 251, 52)">
@@ -86,7 +86,7 @@
                                             WhatsApp
                                         </button>
                                     </a>
-                                    <a href="https://lawyershub.com/" target="blank">
+                                    <a href="{{ $lawyer->website }}" target="blank">
                                         <button type="button" data-te-ripple-init data-te-ripple-color="light"
                                             class="mb-2 flex rounded outline-none px-6 py-2.5 text-sm font-medium uppercase leading-normal text-gray-500 shadow-lg transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
                                             style="">
@@ -148,20 +148,17 @@
                                         </div>
                                         {{-- <div class="line m-auto my-3 w-full h-px bg-gray-600 opacity-60"></div> --}}
                                         <div class="license mt-2">
-                                            <h4 class=" capitalize text-lg text-gray-600">License for 20 years</h4>
+                                            <h4 class=" capitalize text-lg text-gray-600">Licensed {{ $lawyer->license_year->diffForHumans() }}</h4>
                                             <a href="#" class=" grid grid-cols-2 my-3 pl-6 gap-4 ">
-                                                <div class="text-base">Personal Lawyer</div>
+                                                <div class="text-base">{{ $lawyer->practice_area }}</div>
                                                 <div class="percentage text-lg">80%</div>
                                             </a>
                                             <a href="#" class=" grid grid-cols-2 my-3 pl-6 gap-4 ">
-                                                <div class=" text-base">Criminal Lawyer</div>
+                                                <div class=" text-base">{{ $lawyer->practice_area }}</div>
                                                 <div class="percentage text-lg">60%</div>
                                             </a>
                                         </div>
                                     </div>
-
-
-
                                 </div>
                                 <div id="reviews"
                                     class="transition-opacity my-4 scroll-mt-14 duration-150 ease-linear data-[te-tab-active]:block"
@@ -315,8 +312,8 @@
                                         <img class="img-fluid rounded-xl h-full w-full" src="{{ asset('assets/images/logo.png') }}" alt="">
                                     </div>
                                     <div class="detail ml-3">
-                                        <h3 class="name text-lg py-1 text-blue-400">Lawyers Name</h3>
-                                        <p class="text-gray-500 flex mb-2 capitalize text-base">Estate Planning</p>
+                                        <h3 class="name text-lg py-1 text-blue-400">{{ $lawyer->first_name ." ". $lawyer->last_name }}</h3>
+                                        <p class="text-gray-500 flex mb-2 capitalize text-base">{{ $lawyer->practice_area }}</p>
                                         <p class="font-sm flex text-gray-500 my-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -325,7 +322,7 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                             </svg>
-                                            License for 20 years 
+                                           Licensed {{ $lawyer->license_year->diffForHumans() }}
                                         </p>
                                         <span class="flex text-gray-500 my-1 py-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -335,14 +332,14 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                             </svg>
-                                            Nairobi, Kenya
+                                            {{ $lawyer->location }}, Kenya
                                         </span>
                                         <span class=" font-sm text-yellow-600 font-light ">Free Consultations</span>
                                     </div>
                                 </div>
                                 <div class="row mt-6 w-full">
                                     <div class="contacts flex flex-col gap-1 w-full">
-                                        <a href="tel:+254789000000" class=" w-full">
+                                        <a href="tel:{{ $lawyer->phone }}" class=" w-full">
                                             <button type="button" data-te-ripple-init data-te-ripple-color="light"
                                                 class="mb-2 w-full items-center justify-center gap-2 flex rounded px-6 py-2 text-base font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
                                                 style="background-color: #ff0000">
@@ -354,7 +351,7 @@
                                                 Call
                                             </button>
                                         </a>
-                                        <a href="#" class=" w-full">
+                                        <a href="{{ $lawyer->website }}" class=" w-full">
                                             <button type="button" data-te-ripple-init data-te-ripple-color="light"
                                                 class="mb-2 justify-center  w-full items-center flex rounded px-6 py-2 text-base font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
                                                 style="background-color: #f00000">
