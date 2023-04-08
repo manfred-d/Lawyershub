@@ -10,5 +10,7 @@
       @vite('resources/js/app.js')
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" /> --}}
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js" defer></script> --}}
     <script src="{{ asset('js/app/js') }}" defer></script>
 </head>

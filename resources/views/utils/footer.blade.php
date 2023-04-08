@@ -1,3 +1,5 @@
+
+
 <footer class="footer bg-gray-800">
     <div class="container">
         <div class="row justify-evenly m-0 p-6 w-full">
