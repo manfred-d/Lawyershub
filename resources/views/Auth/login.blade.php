@@ -1,4 +1,4 @@
-<x-layout>
+@include('utils.head')
     <section class="h-screen">
         <div class="container m-auto h-full">
             <div class="row w-full min-h-screen items-center justify-center">
@@ -6,35 +6,37 @@
                     <div class="form_title mb-5 flex flex-col items-center justify-center mt-2   border-b border-gray-300 w-full pb-3">
                         <h5>Login</h5>                            
                     </div>
-                    <form method="post" action="" enctype="multipart/form-data">
-                        
+                    <form method="post" action="{{ route('user.store') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="relative mb-6" data-te-input-wrapper-init>
                             <input
                             type="email"
+                            name="email"
                             class=" block min-h-[auto] w-full rounded border border-gray-400 min-w-[90%] mt-2 bg-transparent py-1 px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none "
                             id="email"
                             placeholder="Email address" />
-                            
+                            <x-input_err :messages="$errors->get('email')" class="" />
                         </div>
                         <div class="relative mb-6 mt-6" data-te-input-wrapper-init>
                             <input
                             type="password"
+                            name="password"
                             class="peer block min-h-[auto] w-full rounded border border-gray-400 bg-transparent py-1 px-4 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none "
                             id="exampleFormControlInput33"
-                            placeholder="Password" />                            
+                            placeholder="Password" />   
+                            <x-input_err :messages="$errors->get('password')" class="" />                         
                         </div>
                         
                         <!-- Submit button -->
                         <button
                             type="submit"
                             class="inline-block w-full rounded px-7 bg-green-600 pt-3 pb-3 text-base font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
-                            data-te-ripple-init
-                            data-te-ripple-color="light">
-                            Sign up
+                        >
+                            Log In
                         </button>
 
-                        <div class="my-4 flex mb-10 items-center justify-center before:mt-0.5 bg-slate-500 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border after:border-neutral-500">
-                            <p class="mx-4 mb-0 text-center font-semibold dark:text-neutral-400">
+                        <div class="my-4 flex items-center justify-center before:mt-0.5 before:z-10 before:relative  before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:relative after:flex-1 after:flex after:border-t after:z-10 after:border-neutral-500">
+                            <p class="mx-4 mb-0  text-center font-semibold dark:text-neutral-400">
                             OR
                             </p>
                         </div>
@@ -66,4 +68,3 @@
             
         </div>
     </section>
-</x-layout>

@@ -23,13 +23,22 @@ use App\Http\Controllers\DashboardController;
 // Route::get('/home', function () {
 //     return view('pages.Home');
 // });
-Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::middleware(['auth',])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
+});
+
 
 // Authentications
 // ?register @ get
-Route::get('account/register', [AuthController::class, 'index'])->name('user.index');
+Route::get('/account/register', [AuthController::class, 'index'])->name('user.index');
+// register @POST
+Route::POST('/account/register', [AuthController::class, 'register'])->name('user.register');
 // login @get form
-Route::get('account/login', [AuthController::class, 'login'])->name('user.login');
+Route::get('/account/login', [AuthController::class, 'login'])->name('user.login');
+// login @post
+Route::post('/account/login', [AuthController::class, 'store'])->name('user.store');
+// User Logout 
+Route::post('/account/logout', [AuthController::class, 'destroy'])->name('user.destroy');
 
 // lawyers info
 Route::get('/attoneys/{lawyer}', [LawyersController::class, 'index'])->name('lawyer.profile');
@@ -39,7 +48,10 @@ Route::get('/account/create_profile',[LawyersController::class,'profileForm'])->
 // store data
 Route::post('/account/create_profile',[LawyersController::class,'store'])->name('create.profile');
 
+// claim acc page
+Route::get('/for_lawyers',[LawyersController::class,'Grow_Practice'])->name('for_lawyers');
 // Lawyers dashboard
 Route::resources([
     '/account/dashboard'=>DashboardController::class,
 ]);
+

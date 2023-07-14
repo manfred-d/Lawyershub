@@ -57,4 +57,10 @@ class LawyersController extends Controller
         return to_route('home.index')->with('message', "Profile created was a Sucess");
     }
 
+    // for_lawyers
+    // claim your acc page
+    public function Grow_Practice() {
+        return view('pages.Grow_your_practice');
+    }
+
 }

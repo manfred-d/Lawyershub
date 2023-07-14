@@ -1,9 +1,9 @@
 @include('utils.head')
 <section>
-    <div class="side_nav max-h-full bg-gray-400 w-64 h-screen fixed py-5 pl-3">
+    <div class="side_nav max-h-full bg-gray-400 h-screen fixed py-5 pl-3">
         {{-- Header details --}}
-        <div class="lawyer_name mx-5 my-2 text-center font-semibold text-xl">
-            Lawyer Names
+        <div class="lawyer_name flex flex-col mx-5 my-2 text-center ">
+            <h4 class="font-semibold text-xl" >Lawyer Names</h4>
             <span class=" font-light text-base py-2">License no.</span>
         </div>
         {{-- menu --}}
@@ -17,7 +17,7 @@
                         class=" my-2 w-full text-center items-center flex justify-center border-b py-2  hover:bg-white transition-all duration-400 cursor-pointer whitespace-nowrap rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-neutral-900 shadow-[0_4px_9px_-4px_#3b71ca] duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none"
                         type="button" id="create" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init
                         data-te-ripple-color="light" data-te-dropdown-position="dropdown">
-                        Create
+                        About
                         <span class="ml-2 w-2">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                 class="h-5 w-5">
@@ -29,18 +29,17 @@
                     </button>
                     {{-- sub-menu --}}
                     <ul class="hidden  z-[1000] m-0  w-full list-none overflow-hidden rounded-b-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
-                        aria-labelledby="create" data-te-dropdown-menu-ref
-                        
+                        aria-labelledby="create" data-te-dropdown-menu-ref                        
                         id="menu1"
                     >
                         <li>
                             <a class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                href="#" data-te-dropdown-item-ref>Action
+                                href="#about" data-te-dropdown-item-ref> About
                             </a>
                         </li>
                         <li>
                             <a class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                href="#" data-te-dropdown-item-ref>Action
+                                href="#practice_area" data-te-dropdown-item-ref>Practice Areas
                             </a>
                         </li>
                     </ul>
@@ -52,7 +51,7 @@
                         onclick="toggleDropdown('menu2')"
                         class=" my-2 w-full text-center items-center flex justify-center border-b py-2  hover:bg-white transition-all duration-400 cursor-pointer whitespace-nowrap rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-neutral-900 shadow-[0_4px_9px_-4px_#3b71ca] duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none"
                         type="button" id="create" >
-                        Create
+                        Resume
                         <span class="ml-2 w-2">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                 class="h-5 w-5">
@@ -68,12 +67,22 @@
                     >
                         <li>
                             <a class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                href="#" >Action
+                                href="#" >Education
                             </a>
                         </li>
                         <li>
                             <a class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                href="#" >Action
+                                href="#" >Work Experience
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                                href="#" >Honors/Awards
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                                href="#" >Associations
                             </a>
                         </li>
                     </ul>
@@ -117,8 +126,11 @@
         </div>
 
     </div>
-    <div class="main_view bg-red-700 min-h-screen  w-full h-full overflow-y-auto ">
-
+    {{-- main view --}}
+    <div class="main_view bg-red-700 min-h-screen absolute right-0  h-full overflow-y-auto">
+        <div class="container">
+            @include('lawyer_Dashboard.dash_forms.create_about')
+        </div>
     </div>
 </section>
 <script>
@@ -134,3 +146,15 @@ function toggleDropdown(menuId) {
 }
 
 </script>
+
+<style>
+    :root{
+    --width:300px;
+    }
+    .side_nav{
+        width:var(--width) ;
+    }
+    .main_view{
+        width: calc(100% - var(--width));
+    }
+</style>

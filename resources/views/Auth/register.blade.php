@@ -1,4 +1,4 @@
-<x-layout>
+@include('utils.head')
     <section>
         <div class="container">
             <div class="row w-full min-h-screen items-center justify-center">
@@ -7,36 +7,61 @@
                         <h5>Are You a Lawyer</h5>
                         <p>if you want to sign up, first find your account</p>
                     </div>
-                    <form method="post" action="" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('user.register') }}" enctype="multipart/form-data">
+                        @csrf
+                            <!-- first name -->
+                            <div class="relative mb-6 mt-6" data-te-input-wrapper-init>
+                                <input
+                                type="name"
+                                name="fname"
+                                value="{{ old('fname') }}"
+                                class="peer block min-h-[auto] w-full rounded border border-gray-400 bg-transparent py-1 px-4 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none "
+                                id="exampleFormControlInput33"
+                                placeholder="First Name" />                            
+                                <x-input_err :messages="$errors->get('fname')" class="" />
+                            </div>
                         <div class="relative mb-6 mt-6" data-te-input-wrapper-init>
                             <input
                             type="name"
+                            name="lname"
+                            value="{{ old('lname') }}"
                             class="peer block min-h-[auto] w-full rounded border border-gray-400 bg-transparent py-1 px-4 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none "
                             id="exampleFormControlInput33"
-                            placeholder="First Name" />                            
+                            placeholder="Last Name" /> 
+                            <x-input_err :messages="$errors->get('lname')" class="" />
                         </div>
-                        <div class="relative mb-6" data-te-input-wrapper-init>
+                        <div class="relative mb-6 mt-6" data-te-input-wrapper-init>
                             <input
                             type="email"
+                            name="email"
+                            value="{{ old('email') }}"
                             class=" block min-h-[auto] w-full rounded border border-gray-400 min-w-[90%] mt-2 bg-transparent py-1 px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none "
                             id="email"
                             placeholder="Email address" />
-                            
+                            <x-input_err :messages="$errors->get('email')" class="" />
+        
                         </div>
                         <div class="relative mb-6 mt-6" data-te-input-wrapper-init>
                             <input
                             type="password"
+                            name="password"
+                            value="{{ old('password') }}"
                             class="peer block min-h-[auto] w-full rounded border border-gray-400 bg-transparent py-1 px-4 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none "
                             id="exampleFormControlInput33"
-                            placeholder="Password" />                            
+                            placeholder="Password" />          
+                            <x-input_err :messages="$errors->get('password')" class="" />
+
                         </div>
                         <div class="relative mb-6 mt-6" data-te-input-wrapper-init>
                             <input
                             type="password"
-                            name="confirmpassword"
+                            value="__('Confirm Password')"
+                            name="password_confirmation"
                             class="peer block min-h-[auto] w-full rounded border border-gray-400 bg-transparent py-1 px-4 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none "
-                            id="exampleFormControlInput33"
-                            placeholder="Confirm Password" />                            
+                            id="password_confrimation"
+                            placeholder="Confirm Password" /> 
+                            <x-input_err :messages="$errors->get('password_confirmation')" class="" />
+
                         </div>
                         <!-- Submit button -->
                         <button
@@ -47,8 +72,8 @@
                             Sign up
                         </button>
 
-                        <div class="my-4 flex mb-10 items-center justify-center before:mt-0.5 bg-slate-500 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border after:border-neutral-500">
-                            <p class="mx-4 mb-0 text-center font-semibold dark:text-neutral-400">
+                        <div class="my-4 flex items-center justify-center before:mt-0.5 before:z-10 before:relative  before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:relative after:flex-1 after:flex after:border-t after:z-10 after:border-neutral-300">
+                            <p class="mx-4 mb-0  text-center font-semibold dark:text-neutral-400">
                             OR
                             </p>
                         </div>
@@ -79,4 +104,3 @@
             </div>
         </div>
     </section>
-</x-layout>

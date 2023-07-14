@@ -10,8 +10,10 @@ class HomeController extends Controller
 {
     public function index(request $request){
         $lawyers = Lawyers_Profile::latest()->paginate(10);
+        $user = $request->User();
         return view('pages.Home',[
-            'lawyers' => $lawyers
+            'lawyers' => $lawyers,
+            'user' =>$user,
         ]);
     }
 }
