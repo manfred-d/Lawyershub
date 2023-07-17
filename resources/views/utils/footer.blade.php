@@ -2,8 +2,8 @@
 
 <footer class="footer bg-gray-800">
     <div class="container">
-        <div class="row justify-evenly m-0 p-6 w-full">
-            <div class="browse m-6 text-yellow-50">
+        <div class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center m-0 p-6 w-full ">
+            <div class="browse  m-6 text-yellow-50">
                 <h4 class=" text-left font-normal text-xl mb-3 ">Browse Through</h4>
                 <ul class="list-unstyled px-2">
                     <li class=" font-light text-base my-2">Find a lawyer</li>
@@ -51,11 +51,11 @@
                 </ul>
             </div>
         </div>
-        <div class="row m-3 p-3 text-yellow-50 justify-center items-center">
-            <div class="rules">
+        <div class="row flex-col sm:flex-row m-3 p-3 text-yellow-50 justify-center items-center">
+            <div class="rules mb-3">
                 Terms of Use &nbsp;&nbsp;|&nbsp;&nbsp; Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp; Guidelines &nbsp;&nbsp;
             </div>
-            <div class="follow_us justify-center items-center space-x-2 text-neutral-700 dark:text-neutral-300 ml-6">
+            <div class="follow_us my-3 justify-center items-center space-x-2 text-neutral-700 dark:text-neutral-300 ml-6">
                 <!-- Twitter -->
                 <a href="https://twitter.com/lawyershubke" target="_blank">
                     <button
