@@ -18,7 +18,7 @@
             <div class="row p-5 text-center mx-3 mt-2">
                 <h4 class=" text-xl text-neutral-500">Top Rated Lawyers</h4>
             </div>
-            <div class="row bg-red-600">
+            <div class="row ">
             
             @if ($lawyers->count())
                 <div class="rated_lawyers grid w-full">

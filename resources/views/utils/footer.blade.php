@@ -4,12 +4,13 @@
     <div class="container">
         <div class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center m-0 p-6 w-full ">
             <div class="browse  m-6 text-yellow-50">
-                <h4 class=" text-left font-normal text-xl mb-3 ">Browse Through</h4>
+                <h4 class=" text-left font-normal text-xl mb-3 ">For Lawyers</h4>
                 <ul class="list-unstyled px-2">
-                    <li class=" font-light text-base my-2">Find a lawyer</li>
-                    <li class=" font-light text-base my-2">Find a lawyer</li>
-                    <li class=" font-light text-base my-2">Find a lawyer</li>
-                    <li class=" font-light text-base my-2">Find a lawyer</li>
+                    <a href="{{ route('create.view') }}">
+                        <li class=" font-light text-base my-2">Lawyer profile</li>
+                    </a>
+                    
+                    
                 </ul>
             </div>
             <div class="browse m-6 text-yellow-50">

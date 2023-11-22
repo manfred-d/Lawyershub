@@ -50,6 +50,8 @@ Route::post('/account/create_profile',[LawyersController::class,'store'])->name(
 
 // claim acc page
 Route::get('/for_lawyers',[LawyersController::class,'Grow_Practice'])->name('for_lawyers');
+Route::get('/legal_advice',[LawyersController::class,'Legal_advice'])->name('legal_advice');
+
 // Lawyers dashboard
 Route::resources([
     '/account/dashboard'=>DashboardController::class,

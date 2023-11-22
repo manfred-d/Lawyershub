@@ -62,5 +62,10 @@ class LawyersController extends Controller
     public function Grow_Practice() {
         return view('pages.Grow_your_practice');
     }
+    // legal advice
+    // 
+    public function Legal_advice(Request $request) {
+        return view('pages.Legal_advice');
+    }
 
 }

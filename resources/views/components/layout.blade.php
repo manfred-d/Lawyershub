@@ -24,13 +24,19 @@
                         </svg>
                     </button>
                     <div class="content absolute transition-all top-full bg-slate-500 w-full py-2 ">
+                        <x-dropdown_link :href="route('lawyer.profile',Auth::user())"
+                                class=" transition-all ">
+                               {{ __('Profile') }} 
+                            </x-dropdown_link> 
                         <form method="post" action="{{ route('user.destroy') }}">
+                              
                             @csrf
                             <x-dropdown_link :href="route('user.destroy')" onclick="event.preventDefault();
                                 this.closest('form').submit();" class=" transition-all ">
                                {{ __('Logout') }} 
                             </x-dropdown_link>
-                        </form>                        
+                        </form>           
+                                  
                     </div>
                 </li>
             @else

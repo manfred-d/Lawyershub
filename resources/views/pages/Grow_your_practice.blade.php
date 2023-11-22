@@ -112,8 +112,12 @@
 
             </div>
             <div class="row w-full flex flex-col md:flex-row items-center px-10 md:px-0">
-                <x-button class=" mb-5 md:mb-0" >Claim Your Profile</x-button>
-                <x-button class=" mb-5 md:mb-0 !bg-transparent outline-1 outline hover:outline-0" >Contact Sales Admin</x-button>
+                <a href="">
+                    <x-button class=" mb-5 md:mb-0" >Claim Your Profile</x-button>
+                </a>
+                <a href="{{ '' }}">
+                    <x-button class=" mb-5 md:mb-0 !bg-transparent outline-1 outline hover:outline-0" >Contact Sales Admin</x-button>
+                </a>
             </div>
         </div>
     </section>
